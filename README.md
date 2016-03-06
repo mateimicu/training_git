@@ -22,29 +22,29 @@ Pasi :
 #### 1.2 Linux
 Depinde in functie de sistem:
 
-*Ubuntu si Debian like sistem (Ubuntu, linux mint):**
+**Ubuntu si Debian like sistem (Ubuntu, linux mint):**
 `
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install git-all
 `
 
-*Arch Linux sistem (Ubuntu, fedora, linux mint):**
+**Arch Linux sistem (Ubuntu, fedora, linux mint):**
 `
 pacman -S git
 De completat
 `
 
-*Solaris Linux sistem (Fedora):**
+**Solaris Linux sistem (Fedora):**
 `
 sudo yum install git-all
 `
 
 #### 1.3 Mac OS X 
-    Descarca instalelul de [aici](http://git-scm.com/download) si urmeaza pasi din el.
+Descarca instalelul de [aici](http://git-scm.com/download) si urmeaza pasi din el.
 
 #### 1.4 Test
-    Daca comanda `git --version` returneaza ceva de genu `git version 1.9.x` totul e okay.
+Daca comanda `git --version` returneaza ceva de genu `git version 1.9.x` totul e okay.
     
 
 
