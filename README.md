@@ -26,7 +26,7 @@
 - [ ] 3. Basic Git Concepts  
     - [ ] 3.1 Commits  
         - [ ] Stagiile din git ( working directory, staging area, commited )  
-        - [ ] How to move a file betwen stages (add, commit, reset, git rm, git mv)
+        - [ ] How to move a file betwen stages (`add`, `commit`, `reset`, `git rm`, ``git mv`)
     - [ ] 3.2 Branches 
         - [ ] Concepts and utility
         - [ ] How to make a branche 
@@ -34,21 +34,32 @@
     - [ ] 3.3 Merging 
         - [ ] How to combine ( merge branches )
         - [ ] How to rezolve conflics
+    - [ ] 3.4 Exercitii
+        - [ ] Ex1. Create Repo
+        - [ ] Ex2. Creare commits
+        - [ ] Ex3. Create a branche
+        - [ ] Ex4. Merging the two branches
   
 - [ ] 4. GitHub explained
-    - [ ] 4.1 Creare cont
-    - [ ] 4.2 Creare repo
-    - [ ] 4.3 Uploading
+    - [ ] 4.1 What is good for ?
+    - [ ] 4.2 Creare cont
+    - [ ] 4.3 Creare repo
+    - [ ] 4.4 Uploading
         - [ ] Clone an existing repo
         - [ ] Attach to an existing repo
         - [ ] Pushing to a repo
-- [ ] 5. Colaboration
+    - [ ] 4.5 Exercitii
+        - Ex.5 Cone my test repo
+        - Ex.6 Push some changes
+        - Ex.7 Make your own repo
+        - Ex.8 Push your own changes ( both branches )
+- [ ] 5. Colaboration and final exercise
 
 
 ### 1. Instalare
 
 #### 1.1 Windows
-Descarcam installerul de la [aici](http://git-scm.com/download)   
+Descarcam installerul de [aici](http://git-scm.com/download) .
 Dupa rulare, vedem unde a fost instalat git-ul.    
 Exemple de path pot fi :   
 - `C:\Program Files (x86)\Git\bin`   
@@ -68,9 +79,9 @@ Depinde in functie de sistem:
      
 **Ubuntu si Debian like sistem (Ubuntu, linux mint):**    
 `   
-sudo apt-get update  
-sudo apt-get upgrade     
-sudo apt-get install git-all   
+sudo apt-get update        
+sudo apt-get upgrade      
+sudo apt-get install git-all       
 `
       
 **Arch Linux sistem (Ubuntu, fedora, linux mint):**   
@@ -84,8 +95,8 @@ De completat
 sudo yum install git-all   
 `  
 
-#### 1.3 Mac OS X    git config --local user.email "johndoe@company.com"git config --local user.email "johndoe@company.com"
-Descarca instalelul de [aici](http://git-scm.com/download) si urmeaza pasi din el.
+#### 1.3 Mac OS X    
+Descarca instalerul de [aici](http://git-scm.com/download) si urmeaza pasi din el.
 
 #### 1.4 Test
 Daca comanda `git --version` returneaza ceva de genu `git version 1.9.x` totul e okay.
@@ -108,12 +119,30 @@ Pentru a specifica un autor global pentru git putem rula comenzile:
 - `rm <path>` deleteaza un fisier
 - `rmdir <path>` deleteaza un director gol
 
-### 3. Introducere Basic in CLI ( command line intercade  )
+### 3. Basic Git Concepts
+#### 3.1 Commits
+#### 3.2 Branches
+#### 3.3 Merging 
+#### 3.4 Exercitii 
+    - Ex1. Create Repo
+    - Ex2. Creare commits
+    - Ex3. Create a branche
+    - Ex4. Merging the two branches
+
 
 ### 4. GitHub Explained
+   
+#### 4.1 What is good for?
 Git este doar un tool, el pastreaza niste snapshoturi despre continutul unui director( mai bine zis o istorie a continutului ). Toolul nu are nevoie de internet, el pastreaza toate informatile intr-un fisier ascuns ( se numeste `.git` ).
     GitHub este un serviciu care iti permite sa pastrezi istoria asta pe un server, in asa fel poti sa clonezi aceasta informatie.
 
+
+#### 4.2 Creare cont
+#### 4.3 Creare repo
+#### 4.4 Uploading 
+#### 4.5 Exercitii
+
+### 5. Colaboration and final exercise
 
     
 
