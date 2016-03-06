@@ -49,7 +49,7 @@
         - [ ] Attach to an existing repo
         - [ ] Pushing to a repo
     - [ ] 4.5 Exercitii
-        - Ex.5 Cone my test repo
+        - Ex.5 Clone my test repo
         - Ex.6 Push some changes
         - Ex.7 Make your own repo
         - Ex.8 Push your own changes ( both branches )
