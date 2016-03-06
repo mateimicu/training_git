@@ -49,10 +49,10 @@
         - [ ] Attach to an existing repo
         - [ ] Pushing to a repo
     - [ ] 4.5 Exercitii
-        - Ex.5 Clone my test repo
-        - Ex.6 Push some changes
-        - Ex.7 Make your own repo
-        - Ex.8 Push your own changes ( both branches )
+        - [ ]Ex.5 Clone my test repo
+        - [ ] Ex.6 Push some changes
+        - [ ] Ex.7 Make your own repo
+        - [ ] Ex.8 Push your own changes ( both branches )
 - [ ] 5. Colaboration and final exercise
 
 
@@ -141,6 +141,10 @@ Git este doar un tool, el pastreaza niste snapshoturi despre continutul unui dir
 #### 4.3 Creare repo
 #### 4.4 Uploading 
 #### 4.5 Exercitii
+    - Ex.5 Clone my test repo
+    - Ex.6 Push some changes
+    - Ex.7 Make your own repo
+    - Ex.8 Push your own changes ( both branches )
 
 ### 5. Colaboration and final exercise
 
