@@ -156,22 +156,21 @@ In git pot executa mai multe "fire" de dezvoltare al unui proiect. Adica de la u
                 commit_m4
                     |
             (crearea banchiurilor)
-            /        |        \
-    A - commit_a1    |   B - commit_b1
-        |         |          |
-        commit_a2    |        commit_b2
-        |         |          |
-        commit_a3    |        commit_b3
-        |         |          |
-        commit_a4    |        commit_b4
-        |         |          |
-        commit_a5    |          |
-        |         |          |
-        \                    /
-            \                  /
-            \                /
-            \              /
-            \            /
+            /       |        \
+    A - commit_a1   |   B - commit_b1
+           |        |          |
+        commit_a2   |        commit_b2
+           |        |          |
+        commit_a3   |        commit_b3
+           |        |          |
+        commit_a4   |        commit_b4
+           |        |          |
+        commit_a5   |          |
+           |        |          |
+            \       |          /
+             \      |         /
+              \     |        /
+               \    |       /
             ( Merging, combinare)
                     |
             M - commit_m5   <- acest commit combina cele doua branchiuri 
@@ -195,19 +194,19 @@ Dupa cum am vazut noi putem combina  doua branchiuri sau mai multe putem folosi 
             (crearea banchiurilor)
             /        |        \
     A - commit_a1    |   B - commit_b1
-        |         |          |
+           |         |          |
         commit_a2    |        commit_b2
-        |         |          |
+           |         |          |
         commit_a3    |        commit_b3
-        |         |          |
+           |         |          |
         commit_a4    |        commit_b4
-        |         |          |
+           |         |          |
         commit_a5    |          |
-        |         |          |
-        \         |          |
+           |         |          |
+           \         |          |
             \        |          |
-            \( git merge A)    |
-                    |          |
+             \( git merge A)    |
+                     |          |
             M - commit_m5      /
                     |         /
                     |        /
