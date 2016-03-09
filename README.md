@@ -49,10 +49,10 @@
         - [ ] Attach to an existing repo
         - [ ] Pushing to a repo
     - [ ] 4.5 Exercitii
-        - [ ]Ex.5 Clone my test repo
-        - [ ] Ex.6 Push some changes
-        - [ ] Ex.7 Make your own repo
-        - [ ] Ex.8 Push your own changes ( both branches )
+        - [ ] Ex.5 Make your own repo
+        - [ ] Ex.6 Push your own changes ( both branches )
+        - [ ] Ex.7 Clone my test repo
+        - [ ] Ex.6 Push my_repo on your GitHub
 - [ ] 5. Colaboration and final exercise
 - 6. Referinte
 	- 6.1 Tutoriale
@@ -250,9 +250,14 @@ Cu alte cuvinte ordinea in care au loc commiturile este data de ordinea in care 
                 
 #### 3.4 Exercitii 
     - Ex1. Create Repo
+        Aici as vrea sa creati ( initializati  ) un repository la voi pe calculator.
     - Ex2. Creare commits
+        In acest repot as vrea sa creati 3 fisiere cu numele :1.txt, 2.txt, 3.txt.DAR,
+        fiecare fisier trebuie creat intr-un commit direfit. 
     - Ex3. Create a branche
-    - Ex4. Merging the two branches
+        Creati o noua branch ( ramura ), cu numele "newNumbers" in care veti crea alte 3 fisiere ( in comituri diferite ) cu numelele: 4.txt, 5.txt, 6.txt
+    - Ex4. Merging
+        Aici o sa va mutati pe branchiul master si o sa aduceti pe aest branch schimbarile de pe branchiul "newNumbers"
 
 
 ### 4. GitHub Explained
@@ -263,15 +268,49 @@ Git este doar un tool, el pastreaza niste snapshoturi despre continutul unui dir
 
 
 #### 4.2 Creare cont
+Crearea contului este clasica ... aveti nevoie de email valid, o parola si totul ar trebui sa mearga usor.
 #### 4.3 Creare repo
-#### 4.4 Uploading 
-#### 4.5 Exercitii
-    - Ex.5 Clone my test repo
-    - Ex.6 Push some changes
-    - Ex.7 Make your own repo
-    - Ex.8 Push your own changes ( both branches )
+Noi avem un repopository pe pc ( cel creat de noi ), dar el nu este si pe GitHub.Pentru a putea urca repoul pe GitHub trebuie sa ii facem un loc, sa cream un repository golin care sa urcam schimbarile. 
+Pe prima pagina ar trebui sa vedem un buton cu verge "New Repository".Daca dam click pe el si ar trebui sa ne apara un meniul de unde setam diferite lucruri pentru repoul nostru.
+
+#### 4.5 Uploading 
+Ca sa uploadam ( terminologia git este "sa facem **push**" ) schimbarile nostre pe server trebuie sa stim ceva, linkul repositoriului.Acest link este in partea de sus si este de forma "https://github.com/USERNAME/NUME_REPOSITORU.git". Daca stim linkul putem folosi comanda `git push LINK BRANCH`, in limbaj mai natural comanda asta spune ceva de genu :
+"Incarca la linkul LINK, toate commiturile de pe branchiul pe care sunt, pe branchiul BRANCH de pe servarul specificat prin link".
+
+Exista un dezavantaj sa trebuiasca mereu sa punem linkul acolo. O varianta este sa setam un alias pentru acel link, sa il salvam undeva. Git ofera aceasta posibilitate prin ceea ce el demuneste **remote** adica linkurile catre repositoriurile remote. Pentru a adauga unul putem folosi `git remote add <alis_pentru_link>  <link_catre_repo>`. Dupa ce am facut asta putem folosi `git push <alias_pentru_link> <branch>`.
+
+Poti clona un repository de pe GitHub cu tot continutul folosint :  
+`git clone <link_catre_repo>`  
+Cand faci asta se va seta un **remote** denumit `origin` cu linkul de unde ai clonat ( deoarece de cele mai multe ori tot acolo o sa doresti sa urci schimbarile )
+
+Se va clona doar un branch dar daca doriti sa aveti local si alte branchiuri de pe server puteti folosi comanda `git checkout -b <nume_branch_local>   <remote_name>/<nume_branch_remote>`. Exemplu `git checkout -b test origin/master`.
+Pentru a vedea toate branchiurile remote puteti folosi `git branch  -a `.
+
+#### 4.6 Exercitii
+    - Ex.5 Make your own repo
+        Creaza un repositoru **pe GitHub**  cu numele "training"
+    - Ex.6 Push your own changes ( both branches )  
+        - 6.1 Adauga ca remote la repositoriul facult local in exercitiile trecute linkul de la repositoriul creat pe GitHub.
+        - 6.2 Incarca schimbarile de pe branchiul **master** ( local  ) pe branchiul **master** remote(pe GitHub adica)
+        Obs. Daca branchiul remote nu exista el va fi creat automat
+        - 6.3 Incarca schimbarile de pe branchiul **newNumbers** ( local  ) pe branchiul **demoBranch** remote(pe GitHub adica)
+        Obs. Daca branchiul remote nu exista el va fi creat automat
+    - Ex.7 Clone my test repo
+        Cloneaza repositoriul trainingului ( https://github.com/micumatei/training_git  ) la tine pe calculator
+    -  Ex.6 Push my_repo on your GitHub
+        Incarca repositoriul trainingului intr-un repository nou la tine pe Git.
 
 ### 5. Colaboration and final exercise
+    Inainte de toate ne dati numele de git si va adaugat in organizatia ASII de pe GitHub.Acolo se va afla un repository de exercitiu, toti trebuie sa faceti urmatori pasi:
+    - Clonati repositoriul
+    - Creati un branch nou, numele branchiului va fi numele vostru.
+    - Creati un director nou pe branchiul ala in care scrieti un program care afiseaza
+"Hello world" in C/C++/Python/JavaScript, orce doriti.
+    - Faceti push la branchiul acela pe GitHub.
+    - Va alegeti un partener
+    - Clonati de pe server si branchiul partenerului 
+    - Dati merge la branchiul partenerului peste branchiul dumneavoastra
+    - Faceti push cu schimbarile pe server
 
     
 ### 6. Referinta
