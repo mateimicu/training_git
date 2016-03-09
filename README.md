@@ -1,6 +1,7 @@
 # Training Git & GitHub 
 
 # Structura training
+- [ ] 0. Why Git and GitHub?
 - [ ] 1. Instalare
     - [ ] 1.1 Windows
         - [ ] Install Git
@@ -57,6 +58,18 @@
 - 6. Referinte
 	- 6.1 Tutoriale
 	- 6.2 Bibliografie
+
+### 0. Why Git and GitHub?
+Cine foloseste git:
+    - ASII
+    - Matei
+    - Facebook
+    - Nvidia
+    - Microsoft
+    - Apple
+    - Twitter
+    - Ebay
+    - Yahoo
 
 
 ### 1. Instalare
