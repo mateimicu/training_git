@@ -155,17 +155,17 @@ In git pot executa mai multe "fire" de dezvoltare al unui proiect. Adica de la u
 		 	 commit_m4
 				 |
 		(crearea banchiurilor)
-		/                 \
-A - commit_a1        B - commit_b1
-	   |                    |
-    commit_a2             commit_b2
-	   |                    |
-    commit_a3             commit_b3
-	   |                    |
-    commit_a4             commit_b4
-	   |                    |
-    commit_a5               |
-	   |                    |
+		/        |        \
+A - commit_a1    |   B - commit_b1
+	   |         |          |
+    commit_a2    |        commit_b2
+	   |         |          |
+    commit_a3    |        commit_b3
+	   |         |          |
+    commit_a4    |        commit_b4
+	   |         |          |
+    commit_a5    |          |
+	   |         |          |
 	   \                    /
 	    \                  /
 	     \                /
@@ -181,6 +181,73 @@ Putem combina cele doua comenzi ( sa cream si sa ne mutam pe o branch ) `git che
 Commiturile pe branchiuri se fac normal.
 
 #### 3.3 Merging 
+Dupa cum am vazut noi putem combina  doua branchiuri sau mai multe putem folosi comanda `git merge <nume_branch>`. Dar lucrurile sunt mai simple. Noi putem face mergi doar intre doua branchiuri, cand folosim comanda noi spunem ca facem merge intre branchiul pe care ne aflam si cel dat ca parametur comenzi, pentru a optine rezultaul de mai sus ar trebui sa facem ceva de genu :
+
+
+		 M - commit_m1
+			     |
+		 	 commit_m2
+			     |
+		 	 commit_m3
+			     |
+		 	 commit_m4
+				 |
+		(crearea banchiurilor)
+		/        |        \
+A - commit_a1    |   B - commit_b1
+	   |         |          |
+    commit_a2    |        commit_b2
+	   |         |          |
+    commit_a3    |        commit_b3
+	   |         |          |
+    commit_a4    |        commit_b4
+	   |         |          |
+    commit_a5    |          |
+	   |         |          |
+	   \         |          |
+	    \        |          |
+		 \( git merge A)    |
+			     |          |
+		 M - commit_m5      /
+                 |         /
+                 |        /
+                 |       /
+                 |      /
+           (git merge B)
+			     |
+		 M - commit_m6 <- acest commit are acum toate schimbarile
+
+Daca ne uitam acum peste `git log` fiind pe branchiul M o sa vedem ceva de genu
+commit_b4
+    |
+commit_b3
+    |
+commit_b2
+    |
+commit_b1
+    |
+commit_b1
+    |
+commit_a5
+    |
+commit_a4
+    |
+commit_a3
+    |
+commit_a2
+    |
+commit_a1
+    |
+commit_m4
+    |
+commit_m3
+    |
+commit_m2
+    |
+commit_m1
+
+Cu alte cuvinte ordinea in care au loc commiturile este data de ordinea in care li se face merge.
+                
 #### 3.4 Exercitii 
     - Ex1. Create Repo
     - Ex2. Creare commits
