@@ -145,7 +145,41 @@ Aceste zone sunt reprezentate asa conceptula.Un workflow specific git ar fi urma
 	- Impachetez fisierele din **staging area** intr-un commit folosind comanda `git commit`, o sa se deschita un editor de text ( nano cel mai probabil ) care te roaga sa descrii continutul commitului ( sa le fie mai usor altor dezvoltatori sa inteleaga ce vrei sa faci ), dupa ce salvezi mesajul commitul este salvat. Poti sa vezi commiturile folosind `git log`.
 	
 #### 3.2 Branches
-In git pot executa mai multe "fire" de dezvoltare al unui proiect. Adica 
+In git pot executa mai multe "fire" de dezvoltare al unui proiect. Adica de la un anumit punct ( commit mai exact ) doriti sa puteti crea doua commituri independente. Un exemplu ar fi urmatoru : Lucrati la un proiect cu o persoana, pana intr-un punct ati lucrat de la acelasi pc, dar acum mergeti fiecare acasa si aveti fiecare de terminat o functie anume, ca sa fiti siguri ca nu stricrati programul creati doua branchiuri (A si B), fiecare implementeaza functia lui pe un branch iar la final le combinati.Voi nota cu M branchiul master( cel default pe care ati lucrat la comun ).
+		 M - commit_m1
+			     |
+		 	 commit_m2
+			     |
+		 	 commit_m3
+			     |
+		 	 commit_m4
+				 |
+		(crearea banchiurilor)
+		/                 \
+A - commit_a1        B - commit_b1
+	   |                    |
+    commit_a2             commit_b2
+	   |                    |
+    commit_a3             commit_b3
+	   |                    |
+    commit_a4             commit_b4
+	   |                    |
+    commit_a5               |
+	   |                    |
+	   \                    /
+	    \                  /
+	     \                /
+	      \              /
+	       \            /
+		( Merging, combinare)
+			     |
+		 M - commit_m5   <- acest commit combina cele doua branchiuri 
+
+Pentru a crea o noua branch folosim `git branch <nume_branch>`		
+Pentru a ne muta pe ea `git checkout <nume_branch>`		
+Putem combina cele doua comenzi ( sa cream si sa ne mutam pe o branch ) `git checkout -b <nume_branch>`
+Commiturile pe branchiuri se fac normal.
+
 #### 3.3 Merging 
 #### 3.4 Exercitii 
     - Ex1. Create Repo
