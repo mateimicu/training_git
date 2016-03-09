@@ -146,34 +146,35 @@ Aceste zone sunt reprezentate asa conceptula.Un workflow specific git ar fi urma
 	
 #### 3.2 Branches
 In git pot executa mai multe "fire" de dezvoltare al unui proiect. Adica de la un anumit punct ( commit mai exact ) doriti sa puteti crea doua commituri independente. Un exemplu ar fi urmatoru : Lucrati la un proiect cu o persoana, pana intr-un punct ati lucrat de la acelasi pc, dar acum mergeti fiecare acasa si aveti fiecare de terminat o functie anume, ca sa fiti siguri ca nu stricrati programul creati doua branchiuri (A si B), fiecare implementeaza functia lui pe un branch iar la final le combinati.Voi nota cu M branchiul master( cel default pe care ati lucrat la comun ).
-		 M - commit_m1
-			     |
-		 	 commit_m2
-			     |
-		 	 commit_m3
-			     |
-		 	 commit_m4
-				 |
-		(crearea banchiurilor)
-		/        |        \
-A - commit_a1    |   B - commit_b1
-	   |         |          |
-    commit_a2    |        commit_b2
-	   |         |          |
-    commit_a3    |        commit_b3
-	   |         |          |
-    commit_a4    |        commit_b4
-	   |         |          |
-    commit_a5    |          |
-	   |         |          |
-	   \                    /
-	    \                  /
-	     \                /
-	      \              /
-	       \            /
-		( Merging, combinare)
-			     |
-		 M - commit_m5   <- acest commit combina cele doua branchiuri 
+
+            M - commit_m1
+                    |
+                commit_m2
+                    |
+                commit_m3
+                    |
+                commit_m4
+                    |
+            (crearea banchiurilor)
+            /        |        \
+    A - commit_a1    |   B - commit_b1
+        |         |          |
+        commit_a2    |        commit_b2
+        |         |          |
+        commit_a3    |        commit_b3
+        |         |          |
+        commit_a4    |        commit_b4
+        |         |          |
+        commit_a5    |          |
+        |         |          |
+        \                    /
+            \                  /
+            \                /
+            \              /
+            \            /
+            ( Merging, combinare)
+                    |
+            M - commit_m5   <- acest commit combina cele doua branchiuri 
 
 Pentru a crea o noua branch folosim `git branch <nume_branch>`		
 Pentru a ne muta pe ea `git checkout <nume_branch>`		
@@ -183,81 +184,80 @@ Commiturile pe branchiuri se fac normal.
 #### 3.3 Merging 
 Dupa cum am vazut noi putem combina  doua branchiuri sau mai multe putem folosi comanda `git merge <nume_branch>`. Dar lucrurile sunt mai simple. Noi putem face mergi doar intre doua branchiuri, cand folosim comanda noi spunem ca facem merge intre branchiul pe care ne aflam si cel dat ca parametur comenzi, pentru a optine rezultaul de mai sus ar trebui sa facem ceva de genu :
 
-
-		 M - commit_m1
-			     |
-		 	 commit_m2
-			     |
-		 	 commit_m3
-			     |
-		 	 commit_m4
-				 |
-		(crearea banchiurilor)
-		/        |        \
-A - commit_a1    |   B - commit_b1
-	   |         |          |
-    commit_a2    |        commit_b2
-	   |         |          |
-    commit_a3    |        commit_b3
-	   |         |          |
-    commit_a4    |        commit_b4
-	   |         |          |
-    commit_a5    |          |
-	   |         |          |
-	   \         |          |
-	    \        |          |
-		 \( git merge A)    |
-			     |          |
-		 M - commit_m5      /
-                 |         /
-                 |        /
-                 |       /
-                 |      /
-           (git merge B)
-			     |
-		 M - commit_m6 <- acest commit are acum toate schimbarile
+            M - commit_m1
+                    |
+                commit_m2
+                    |
+                commit_m3
+                    |
+                commit_m4
+                    |
+            (crearea banchiurilor)
+            /        |        \
+    A - commit_a1    |   B - commit_b1
+        |         |          |
+        commit_a2    |        commit_b2
+        |         |          |
+        commit_a3    |        commit_b3
+        |         |          |
+        commit_a4    |        commit_b4
+        |         |          |
+        commit_a5    |          |
+        |         |          |
+        \         |          |
+            \        |          |
+            \( git merge A)    |
+                    |          |
+            M - commit_m5      /
+                    |         /
+                    |        /
+                    |       /
+                    |      /
+            (git merge B)
+                    |
+            M - commit_m6 <- acest commit are acum toate schimbarile
 
 Daca ne uitam acum peste `git log` fiind pe branchiul M o sa vedem ceva de genu
-commit_b4
-    |
-commit_b3
-    |
-commit_b2
-    |
-commit_b1
-    |
-commit_b1
-    |
-commit_a5
-    |
-commit_a4
-    |
-commit_a3
-    |
-commit_a2
-    |
-commit_a1
-    |
-commit_m4
-    |
-commit_m3
-    |
-commit_m2
-    |
-commit_m1
+    commit_b4
+        |
+    commit_b3
+        |
+    commit_b2
+        |
+    commit_b1
+        |
+    commit_b1
+        |
+    commit_a5
+        |
+    commit_a4
+        |
+    commit_a3
+        |
+    commit_a2
+        |
+    commit_a1
+        |
+    commit_m4
+        |
+    commit_m3
+        |
+    commit_m2
+        |
+    commit_m1
 
 Cu alte cuvinte ordinea in care au loc commiturile este data de ordinea in care li se face merge.
                 
 #### 3.4 Exercitii 
-    - Ex1. Create Repo
-        Aici as vrea sa creati ( initializati  ) un repository la voi pe calculator.
-    - Ex2. Creare commits
-        In acest repot as vrea sa creati 3 fisiere cu numele :1.txt, 2.txt, 3.txt.DAR,
-        fiecare fisier trebuie creat intr-un commit direfit. 
-    - Ex3. Create a branche
-        Creati o noua branch ( ramura ), cu numele "newNumbers" in care veti crea alte 3 fisiere ( in comituri diferite ) cu numelele: 4.txt, 5.txt, 6.txt
-    - Ex4. Merging
-        Aici o sa va mutati pe branchiul master si o sa aduceti pe aest branch schimbarile de pe branchiul "newNumbers"
+- Ex1. Create Repo
+Aici as vrea sa creati ( initializati  ) un repository la voi pe calculator.
+- Ex2. Creare commits
+In acest repot as vrea sa creati 3 fisiere cu numele :1.txt, 2.txt, 3.txt.DAR,
+fiecare fisier trebuie creat intr-un commit direfit. 
+- Ex3. Create a branche
+Creati o noua branch ( ramura ), cu numele "newNumbers" in care veti crea alte 3 fisiere ( in comituri diferite ) cu numelele: 4.txt, 5.txt, 6.txt
+- Ex4. Merging
+Aici o sa va mutati pe branchiul master si o sa aduceti pe aest branch schimbarile de pe branchiul "newNumbers"
 
 
 ### 4. GitHub Explained
@@ -287,30 +287,30 @@ Se va clona doar un branch dar daca doriti sa aveti local si alte branchiuri de 
 Pentru a vedea toate branchiurile remote puteti folosi `git branch  -a `.
 
 #### 4.6 Exercitii
-    - Ex.5 Make your own repo
-        Creaza un repositoru **pe GitHub**  cu numele "training"
-    - Ex.6 Push your own changes ( both branches )  
-        - 6.1 Adauga ca remote la repositoriul facult local in exercitiile trecute linkul de la repositoriul creat pe GitHub.
-        - 6.2 Incarca schimbarile de pe branchiul **master** ( local  ) pe branchiul **master** remote(pe GitHub adica)
-        Obs. Daca branchiul remote nu exista el va fi creat automat
-        - 6.3 Incarca schimbarile de pe branchiul **newNumbers** ( local  ) pe branchiul **demoBranch** remote(pe GitHub adica)
-        Obs. Daca branchiul remote nu exista el va fi creat automat
-    - Ex.7 Clone my test repo
-        Cloneaza repositoriul trainingului ( https://github.com/micumatei/training_git  ) la tine pe calculator
-    -  Ex.6 Push my_repo on your GitHub
-        Incarca repositoriul trainingului intr-un repository nou la tine pe Git.
+- Ex.5 Make your own repo
+Creaza un repositoru **pe GitHub**  cu numele "training"
+- Ex.6 Push your own changes ( both branches )  
+- 6.1 Adauga ca remote la repositoriul facult local in exercitiile trecute linkul de la repositoriul creat pe GitHub.
+- 6.2 Incarca schimbarile de pe branchiul **master** ( local  ) pe branchiul **master** remote(pe GitHub adica)
+Obs. Daca branchiul remote nu exista el va fi creat automat
+- 6.3 Incarca schimbarile de pe branchiul **newNumbers** ( local  ) pe branchiul **demoBranch** remote(pe GitHub adica)
+Obs. Daca branchiul remote nu exista el va fi creat automat
+- Ex.7 Clone my test repo
+Cloneaza repositoriul trainingului ( https://github.com/micumatei/training_git  ) la tine pe calculator
+-  Ex.6 Push my_repo on your GitHub
+Incarca repositoriul trainingului intr-un repository nou la tine pe Git.
 
 ### 5. Colaboration and final exercise
-    Inainte de toate ne dati numele de git si va adaugat in organizatia ASII de pe GitHub.Acolo se va afla un repository de exercitiu, toti trebuie sa faceti urmatori pasi:
-    - Clonati repositoriul
-    - Creati un branch nou, numele branchiului va fi numele vostru.
-    - Creati un director nou pe branchiul ala in care scrieti un program care afiseaza
+Inainte de toate ne dati numele de git si va adaugat in organizatia ASII de pe GitHub.Acolo se va afla un repository de exercitiu, toti trebuie sa faceti urmatori pasi:
+- Clonati repositoriul
+- Creati un branch nou, numele branchiului va fi numele vostru.
+- Creati un director nou pe branchiul ala in care scrieti un program care afiseaza
 "Hello world" in C/C++/Python/JavaScript, orce doriti.
-    - Faceti push la branchiul acela pe GitHub.
-    - Va alegeti un partener
-    - Clonati de pe server si branchiul partenerului 
-    - Dati merge la branchiul partenerului peste branchiul dumneavoastra
-    - Faceti push cu schimbarile pe server
+- Faceti push la branchiul acela pe GitHub.
+- Va alegeti un partener
+- Clonati de pe server si branchiul partenerului 
+- Dati merge la branchiul partenerului peste branchiul dumneavoastra
+- Faceti push cu schimbarile pe server
 
     
 ### 6. Referinta
