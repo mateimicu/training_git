@@ -127,13 +127,13 @@ In git exista mai multe stagii:
     - .git directory ( repository )
 ![alt tag](https://git-scm.com/book/en/v2/book/01-introduction/images/areas.png)
 ** Working Directory **
-Este chear continutul directorului tau cu toate modificarile lui
+Este chiar continutul directorului tau cu toate modificarile lui
   
 ** Staging area **
 Este o zona "separata" in care sunt pastrate fisierele pe care tu ai decis ca sunt okay.
   
 ** Repository **
-Este chear zona in care se pastreaza commiturile, ( snapshoturile ), nimic nu poate exista in zona asta daca nu este sub forma unui commit.
+Este chiar zona in care se pastreaza commiturile, ( snapshoturile ), nimic nu poate exista in zona asta daca nu este sub forma unui commit.
 
 Aceste zone sunt reprezentate asa conceptula.Un workflow specific git ar fi urmatoru:
 	- Initializez repository ( adica creez un `.git` in folderu curent si asa acesta devine un repository, comanda pentru asta `git init` )
