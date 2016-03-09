@@ -1,6 +1,7 @@
 # Training Git & GitHub 
 
 # Structura training
+- [ ] 0. Why Git and GitHub?
 - [ ] 1. Instalare
     - [ ] 1.1 Windows
         - [ ] Install Git
@@ -26,14 +27,14 @@
 - [ ] 3. Basic Git Concepts  
     - [ ] 3.1 Commits  
         - [ ] Stagiile din git ( working directory, staging area, commited )  
-        - [ ] How to move a file betwen stages (`add`, `commit`, `reset`, `git rm`, ``git mv`)
+        - [ ] How to move a file between stages (`add`, `commit`, `reset`, `git rm`, `git mv`)
     - [ ] 3.2 Branches 
         - [ ] Concepts and utility
         - [ ] How to make a branche 
-        - [ ] How to move betwen branches
+        - [ ] How to move between branches
     - [ ] 3.3 Merging 
         - [ ] How to combine ( merge branches )
-        - [ ] How to rezolve conflics
+        - [ ] How to resolve conflics
     - [ ] 3.4 Exercitii
         - [ ] Ex1. Create Repo
         - [ ] Ex2. Creare commits
@@ -58,6 +59,18 @@
 	- 6.1 Tutoriale
 	- 6.2 Bibliografie
 
+### 0. Why Git and GitHub?
+Cine foloseste git:
+    - ASII
+    - Matei
+    - Facebook
+    - Nvidia
+    - Microsoft
+    - Apple
+    - Twitter
+    - Ebay
+    - Yahoo
+
 
 ### 1. Instalare
 
@@ -71,11 +84,12 @@ Dupa ce stim exact care este ar trebui sa putem rula `path/to/file/git --version
 Adaugam path-ul corect  in enviromentul de sistem.   
 Pasi :   
 - Click dreapta *My Computer*       
-- Click *Adcanve System Settings*    
+- Click *Properties* 
+- Click *Advance System Settings*    
 - Click *Evironment Variables*    
 - La tabul cu *System Variables*        
 - Cauta variabila *path* si apasa pe *editare*   
-- Adaugat pathul gasit la sfarsitul textului ( Obs. Adaugat un `;` inainte sa dai paste )   
+- Adauga pathul gasit la sfarsitul textului ( Obs. Adauga un `;` inainte sa dai paste )   
    
 #### 1.2 Linux     
 Depinde in functie de sistem:    
@@ -94,7 +108,7 @@ pacman -S git
 
 
 #### 1.3 Mac OS X    
-Descarca instalerul de [aici](http://git-scm.com/download) si urmeaza pasi din el.
+Descarca installerul de [aici](http://git-scm.com/download) si urmeaza pasii din el.
 
 #### 1.4 Test
 Daca comanda `git --version` returneaza ceva de genu `git version 1.9.x` totul e okay.
@@ -135,17 +149,17 @@ Este o zona "separata" in care sunt pastrate fisierele pe care tu ai decis ca su
 ** Repository **
 Este chiar zona in care se pastreaza commiturile, ( snapshoturile ), nimic nu poate exista in zona asta daca nu este sub forma unui commit.
 
-Aceste zone sunt reprezentate asa conceptula.Un workflow specific git ar fi urmatoru:
+Aceste zone sunt reprezentate asa conceptual. Un workflow specific git ar fi urmatorul:
 	- Initializez repository ( adica creez un `.git` in folderu curent si asa acesta devine un repository, comanda pentru asta `git init` )
 	- Adaug fisiere / fac modificari fisierelor ( asta se face doar in **working directory** )
 	- Dupa ce am decis ca anumite fisiere (X, Y, Z) sunt complete si sunt la o versiune anume, le adaug in staging area ( cu alte cuvinte versiunea actuala a fisierelor, va face parte din viitorul commit )
 	Obs.
 	Comanda pentru a adauga un fisier din **working directory** in **staging area** este `git add <nume_fisier>`
 	- Repet adaugatul fisierelor in **staging area** pana cand toate fisierele care au fost modificate ajung la o versiune  "stabila"( cu alte cuvinte cred ca fisierele care se afla in staging area ar constitui un commit, snapshot )
-	- Impachetez fisierele din **staging area** intr-un commit folosind comanda `git commit`, o sa se deschita un editor de text ( nano cel mai probabil ) care te roaga sa descrii continutul commitului ( sa le fie mai usor altor dezvoltatori sa inteleaga ce vrei sa faci ), dupa ce salvezi mesajul commitul este salvat. Poti sa vezi commiturile folosind `git log`.
+	- Impachetez fisierele din **staging area** intr-un commit folosind comanda `git commit`, o sa se deschida un editor de text ( nano cel mai probabil ) care te roaga sa descrii continutul commitului ( sa le fie mai usor altor dezvoltatori sa inteleaga ce vrei sa faci ), dupa ce salvezi mesajul commitul este salvat. Poti sa vezi commiturile folosind `git log`.
 	
 #### 3.2 Branches
-In git pot executa mai multe "fire" de dezvoltare al unui proiect. Adica de la un anumit punct ( commit mai exact ) doriti sa puteti crea doua commituri independente. Un exemplu ar fi urmatoru : Lucrati la un proiect cu o persoana, pana intr-un punct ati lucrat de la acelasi pc, dar acum mergeti fiecare acasa si aveti fiecare de terminat o functie anume, ca sa fiti siguri ca nu stricrati programul creati doua branchiuri (A si B), fiecare implementeaza functia lui pe un branch iar la final le combinati.Voi nota cu M branchiul master( cel default pe care ati lucrat la comun ).
+In git pot executa mai multe "fire" de dezvoltare a unui proiect. Adica de la un anumit punct ( commit mai exact ) doriti sa puteti crea doua commituri independente. Un exemplu ar fi urmatorul : Lucrati la un proiect cu o persoana, pana intr-un punct ati lucrat de la acelasi pc, dar acum mergeti fiecare acasa si aveti fiecare de terminat o functie anume, ca sa fiti siguri ca nu stricati programul creati doua branchuri (A si B), fiecare implementeaza functia lui pe un branch iar la final le combinati.Voi nota cu M branchul master( cel default pe care ati lucrat la comun ).
 
             M - commit_m1
                     |
@@ -155,7 +169,7 @@ In git pot executa mai multe "fire" de dezvoltare al unui proiect. Adica de la u
                     |
                 commit_m4
                     |
-            (crearea banchiurilor)
+            (crearea branchurilor)
             /       |        \
     A - commit_a1   |   B - commit_b1
            |        |          |
@@ -173,15 +187,15 @@ In git pot executa mai multe "fire" de dezvoltare al unui proiect. Adica de la u
                \    |       /
             ( Merging, combinare)
                     |
-            M - commit_m5   <- acest commit combina cele doua branchiuri 
+            M - commit_m5   <- acest commit combina cele doua branchuri 
 
 Pentru a crea o noua branch folosim `git branch <nume_branch>`		
 Pentru a ne muta pe ea `git checkout <nume_branch>`		
 Putem combina cele doua comenzi ( sa cream si sa ne mutam pe o branch ) `git checkout -b <nume_branch>`
-Commiturile pe branchiuri se fac normal.
+Commiturile pe branchuri se fac normal.
 
 #### 3.3 Merging 
-Dupa cum am vazut noi putem combina  doua branchiuri sau mai multe putem folosi comanda `git merge <nume_branch>`. Dar lucrurile sunt mai simple. Noi putem face mergi doar intre doua branchiuri, cand folosim comanda noi spunem ca facem merge intre branchiul pe care ne aflam si cel dat ca parametur comenzi, pentru a optine rezultaul de mai sus ar trebui sa facem ceva de genu :
+Dupa cum am vazut noi putem combina  doua branchuri sau mai multe putem folosind comanda `git merge <nume_branch>`. Dar lucrurile sunt mai simple. Noi putem face merging doar intre doua branchiuri, cand folosim comanda noi spunem ca facem merge intre branchul pe care ne aflam si cel dat ca parametru comenzii, pentru a obtine rezultatul de mai sus ar trebui sa facem ceva de genu :
 
             M - commit_m1
                     |
@@ -216,7 +230,7 @@ Dupa cum am vazut noi putem combina  doua branchiuri sau mai multe putem folosi 
                     |
             M - commit_m6 <- acest commit are acum toate schimbarile
 
-Daca ne uitam acum peste `git log` fiind pe branchiul M o sa vedem ceva de genu
+Daca ne uitam acum peste `git log` fiind pe branchul M o sa vedem ceva de genul
     commit_b4
         |
     commit_b3
@@ -251,12 +265,12 @@ Cu alte cuvinte ordinea in care au loc commiturile este data de ordinea in care 
 - Ex1. Create Repo
 Aici as vrea sa creati ( initializati  ) un repository la voi pe calculator.
 - Ex2. Creare commits
-In acest repot as vrea sa creati 3 fisiere cu numele :1.txt, 2.txt, 3.txt.DAR,
-fiecare fisier trebuie creat intr-un commit direfit. 
+In acest repo as vrea sa creati 3 fisiere cu numele :1.txt, 2.txt, 3.txt.DAR,
+fiecare fisier trebuie creat intr-un commit diferit. 
 - Ex3. Create a branche
-Creati o noua branch ( ramura ), cu numele "newNumbers" in care veti crea alte 3 fisiere ( in comituri diferite ) cu numelele: 4.txt, 5.txt, 6.txt
+Creati o noua branch ( ramura ), cu numele "newNumbers" in care veti crea alte 3 fisiere ( in comituri diferite ) cu numele: 4.txt, 5.txt, 6.txt
 - Ex4. Merging
-Aici o sa va mutati pe branchiul master si o sa aduceti pe aest branch schimbarile de pe branchiul "newNumbers"
+Aici o sa va mutati pe branchul master si o sa aduceti pe acest branch schimbarile de pe branchul "newNumbers"
 
 
 ### 4. GitHub Explained
@@ -269,31 +283,31 @@ Git este doar un tool, el pastreaza niste snapshoturi despre continutul unui dir
 #### 4.2 Creare cont
 Crearea contului este clasica ... aveti nevoie de email valid, o parola si totul ar trebui sa mearga usor.
 #### 4.3 Creare repo
-Noi avem un repopository pe pc ( cel creat de noi ), dar el nu este si pe GitHub.Pentru a putea urca repoul pe GitHub trebuie sa ii facem un loc, sa cream un repository golin care sa urcam schimbarile. 
-Pe prima pagina ar trebui sa vedem un buton cu verge "New Repository".Daca dam click pe el si ar trebui sa ne apara un meniul de unde setam diferite lucruri pentru repoul nostru.
+Noi avem un repository pe pc ( cel creat de noi ), dar el nu este si pe GitHub.Pentru a putea urca repoul pe GitHub trebuie sa ii facem un loc, sa cream un repository gol in care sa urcam schimbarile. 
+Pe prima pagina ar trebui sa vedem un buton cu verde "New Repository".Daca dam click pe el si ar trebui sa ne apara meniul de unde setam diferite lucruri pentru repoul nostru.
 
 #### 4.5 Uploading 
-Ca sa uploadam ( terminologia git este "sa facem **push**" ) schimbarile nostre pe server trebuie sa stim ceva, linkul repositoriului.Acest link este in partea de sus si este de forma "https://github.com/USERNAME/NUME_REPOSITORU.git". Daca stim linkul putem folosi comanda `git push LINK BRANCH`, in limbaj mai natural comanda asta spune ceva de genu :
-"Incarca la linkul LINK, toate commiturile de pe branchiul pe care sunt, pe branchiul BRANCH de pe servarul specificat prin link".
+Ca sa uploadam ( terminologia git este "sa facem **push**" ) schimbarile nostre pe server trebuie sa stim ceva, linkul repositoriului. Acest link este in partea de sus si este de forma "https://github.com/USERNAME/NUME_REPOSITORU.git". Daca stim linkul putem folosi comanda `git push LINK BRANCH`, in limbaj mai natural comanda asta spune ceva de genu :
+"Incarca la linkul LINK, toate commiturile de pe branchul pe care sunt, pe branchul BRANCH de pe servarul specificat prin link".
 
-Exista un dezavantaj sa trebuiasca mereu sa punem linkul acolo. O varianta este sa setam un alias pentru acel link, sa il salvam undeva. Git ofera aceasta posibilitate prin ceea ce el demuneste **remote** adica linkurile catre repositoriurile remote. Pentru a adauga unul putem folosi `git remote add <alis_pentru_link>  <link_catre_repo>`. Dupa ce am facut asta putem folosi `git push <alias_pentru_link> <branch>`.
+Exista un dezavantaj sa trebuiasca mereu sa punem linkul acolo. O varianta este sa setam un alias pentru acel link, sa il salvam undeva. Git ofera aceasta posibilitate prin ceea ce el denumeste **remote** adica linkurile catre repositoriurile remote. Pentru a adauga unul putem folosi `git remote add <alis_pentru_link>  <link_catre_repo>`. Dupa ce am facut asta putem folosi `git push <alias_pentru_link> <branch>`.
 
-Poti clona un repository de pe GitHub cu tot continutul folosint :  
+Poti clona un repository de pe GitHub cu tot continutul folosind :  
 `git clone <link_catre_repo>`  
 Cand faci asta se va seta un **remote** denumit `origin` cu linkul de unde ai clonat ( deoarece de cele mai multe ori tot acolo o sa doresti sa urci schimbarile )
 
-Se va clona doar un branch dar daca doriti sa aveti local si alte branchiuri de pe server puteti folosi comanda `git checkout -b <nume_branch_local>   <remote_name>/<nume_branch_remote>`. Exemplu `git checkout -b test origin/master`.
+Se va clona doar un branch dar daca doriti sa aveti local si alte branchuri de pe server puteti folosi comanda `git checkout -b <nume_branch_local>   <remote_name>/<nume_branch_remote>`. Exemplu `git checkout -b test origin/master`.
 Pentru a vedea toate branchiurile remote puteti folosi `git branch  -a `.
 
 #### 4.6 Exercitii
 - Ex.5 Make your own repo
-Creaza un repositoru **pe GitHub**  cu numele "training"
+Creeaza un repository **pe GitHub**  cu numele "training"
 - Ex.6 Push your own changes ( both branches )  
-- 6.1 Adauga ca remote la repositoriul facult local in exercitiile trecute linkul de la repositoriul creat pe GitHub.
-- 6.2 Incarca schimbarile de pe branchiul **master** ( local  ) pe branchiul **master** remote(pe GitHub adica)
-Obs. Daca branchiul remote nu exista el va fi creat automat
-- 6.3 Incarca schimbarile de pe branchiul **newNumbers** ( local  ) pe branchiul **demoBranch** remote(pe GitHub adica)
-Obs. Daca branchiul remote nu exista el va fi creat automat
+- 6.1 Adauga ca remote la repositoriul facut local in exercitiile trecute linkul de la repositoriul creat pe GitHub.
+- 6.2 Incarca schimbarile de pe branchul **master** ( local  ) pe branchul **master** remote(pe GitHub adica)
+Obs. Daca branchul remote nu exista el va fi creat automat
+- 6.3 Incarca schimbarile de pe branchul **newNumbers** ( local  ) pe branchul **demoBranch** remote(pe GitHub adica)
+Obs. Daca branchul remote nu exista el va fi creat automat
 - Ex.7 Clone my test repo
 Cloneaza repositoriul trainingului ( https://github.com/micumatei/training_git  ) la tine pe calculator
 -  Ex.6 Push my_repo on your GitHub
@@ -307,13 +321,13 @@ Inainte de toate ne dati numele de git si va adaugat in organizatia ASII de pe G
 "Hello world" in C/C++/Python/JavaScript, orce doriti.
 - Faceti push la branchiul acela pe GitHub.
 - Va alegeti un partener
-- Clonati de pe server si branchiul partenerului 
-- Dati merge la branchiul partenerului peste branchiul dumneavoastra
+- Clonati de pe server si branchul partenerului 
+- Dati merge la branchul partenerului peste branchiul dumneavoastra
 - Faceti push cu schimbarile pe server
 
     
 ### 6. Referinta
-#### 6.1 Tutotiale
+#### 6.1 Tutoriale
 	- https://try.github.io/levels/1/challenges/1
 	- http://pcottle.github.io/learnGitBranching/
 #### 6.1 Bibliografie 
